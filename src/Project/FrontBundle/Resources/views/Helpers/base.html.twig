@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+	<!--<![endif]-->
+	<head>
+
+		<!-- Basic Page Needs
+		================================================== -->
+		<meta charset="utf-8">
+		<title>Farmagastia </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Mobile Specific Metas
+		================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- Favicons
+		================================================== -->
+		<link rel="shortcut icon" href="{{asset('front/images/icons/favicon.ico')}}">
+		<link rel="apple-touch-icon" href="{{asset('front/images/icons/apple-touch-icon.png')}}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{asset('front/images/icons/apple-touch-icon-72x72.png')}}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{asset('front/images/icons/apple-touch-icon-114x114.png')}}">
+
+		<!-- CSS
+		================================================== -->
+		<link href="//fonts.googleapis.com/css?family=Stint+Ultra Condensed:400" rel="stylesheet" type="text/css">
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+		<link href="//fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
+		<link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="{{asset('front/css/base.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/skeleton.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/flexslider.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/prettyPhoto.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/layout.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/colorbox.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/slimmenu.css')}}">
+		{%block topCSS%}
+	    {%endblock%}
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Javascript
+		================================================== -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="{{asset('front/js/jquery.sticky.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/jquery.inview.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/jquery.flexslider.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/jquery.quicksand.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/sorting.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/jquery.prettyPhoto.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/smooth-scroll.js')}}" type="text/javascript"></script>
+		<script type="text/javascript">
+			var ismobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+			if (!ismobile)
+				document.write('<script src=\'{{asset("front/js/nbw-parallax.js")}}\' type="text/javascript"><\/script>');
+		</script>
+		{%block topScripts%}
+	    {%endblock%}
+
+	</head>
+	<body class="gris" >
+        
+
+        {% include 'ProjectFrontBundle:Helpers:encabezado.html.twig' %}
+		<!-- end intro -->
+
+		<div id="villa">
+			<div class="container"  >
+				<!-- end sixteen columns -->
+				{%block contenido%}
+	            {%endblock%}
+
+			</div>
+			<!-- end container -->
+		</div>
+
+		{% include 'ProjectFrontBundle:Helpers:piepagina.html.twig' %}
+
+
+		<!-- end contact -->
+
+		<!-- Contact Form
+		================================================== -->
+		<link rel="stylesheet" href="{{asset('front/css/page.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/base-contact.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/custom.css')}}">
+		<script src="{{asset('front/js/plugins.js')}}"></script>
+		<script src="{{asset('front/js/scripts.js')}}"></script>
+
+		<!-- Misc settings (sticky nav, prettyPhoto, flexslider)
+		================================================== -->
+		<script type="text/javascript">
+			function scrollTo(target) {
+				var myArray = target.split('#');
+				var targetPosition = jQuery('#' + myArray[1]).offset().top;
+				jQuery('html,body').animate({
+					scrollTop : targetPosition
+				}, 'slow');
+			}
+
+
+			jQuery(document).ready(function() {
+				jQuery("nav").sticky({
+					topSpacing : 0
+				});
+
+				/* This is basic - uses default settings */
+
+				jQuery("a[class^='prettyPhoto']").prettyPhoto({
+					social_tools : false,
+					theme : 'light_square'
+				});
+
+				/* Using custom settings */
+
+				jQuery('.flexslider').flexslider({
+					animation : "slide",
+					slideshow : true,
+					slideshowSpeed : 3500,
+					animationSpeed : 1000
+				});
+
+			});
+		</script>
+
+		<!-- Nav menu
+		================================================== -->
+		<script src="{{asset('front/js/jquery.slimmenu.min.js')}}" type="text/javascript"></script>
+		<script src="{{asset('front/js/jquery.easing.1.3.js')}}" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			$('ul.slimmenu').slimmenu({
+				resizeWidth : '800',
+				collapserTitle : 'Main Menu',
+				easingEffect : 'easeInOutQuint',
+				animSpeed : 'medium',
+				indentChildren : true,
+				childrenIndenter : '&raquo;'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#imagenes a[rel^='prettyPhoto']").prettyPhoto({
+					theme : 'light_square',
+					slideshow : 2000,
+					autoplay_slideshow : false
+				});
+			});
+
+		</script>
+		{%block bottomScripts%}
+	    {%endblock%}
+	</body>
+</html>

@@ -1,0 +1,6 @@
+project_front_homepage:
+    pattern:  /
+    defaults: { _controller: ProjectFrontBundle:Default:index }
+project_front_farmacia:
+    pattern:  /farmacia
+    defaults: { _controller: ProjectFrontBundle:Default:farmacia }
