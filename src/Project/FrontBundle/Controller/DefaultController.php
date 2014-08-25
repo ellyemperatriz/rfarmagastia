@@ -29,6 +29,7 @@ class DefaultController extends Controller
 		$array = array_merge($firstArray, $secondArray);
 		return $this -> render('ProjectFrontBundle:Default:index.html.twig', $array);
 	}
+	
 	public function farmaciaAction() {
 
 
@@ -46,6 +47,74 @@ class DefaultController extends Controller
 		return $this -> render('ProjectFrontBundle:Default:farmacia.html.twig', $array);
 	}
 	
+	public function serviciosAction() {
+
+
+		$firstArray = array();//UtilitiesAPI::getDefaultContent('inicio', $this);
+		$secondArray = array();
+
+		$em = $this -> getDoctrine() -> getManager();
+		$dql = "SELECT n FROM ProjectUserBundle:Page n";
+		$query = $em -> createQuery($dql);
+		//$query -> setParameter('term', '%'.$term.'%');
+		$query ->setMaxResults(1);
+
+		
+		$array = array_merge($firstArray, $secondArray);
+		return $this -> render('ProjectFrontBundle:Default:servicios.html.twig', $array);
+	}
+
+	public function tarjetaAction() {
+
+
+		$firstArray = array();//UtilitiesAPI::getDefaultContent('inicio', $this);
+		$secondArray = array();
+
+		$em = $this -> getDoctrine() -> getManager();
+		$dql = "SELECT n FROM ProjectUserBundle:Page n";
+		$query = $em -> createQuery($dql);
+		//$query -> setParameter('term', '%'.$term.'%');
+		$query ->setMaxResults(1);
+
+		
+		$array = array_merge($firstArray, $secondArray);
+		return $this -> render('ProjectFrontBundle:Default:tarjeta.html.twig', $array);
+	}
+
+	public function tiendaAction() {
+
+
+		$firstArray = array();//UtilitiesAPI::getDefaultContent('inicio', $this);
+		$secondArray = array();
+
+		$em = $this -> getDoctrine() -> getManager();
+		$dql = "SELECT n FROM ProjectUserBundle:Page n";
+		$query = $em -> createQuery($dql);
+		//$query -> setParameter('term', '%'.$term.'%');
+		$query ->setMaxResults(1);
+
+		
+		$array = array_merge($firstArray, $secondArray);
+		return $this -> render('ProjectFrontBundle:Default:tienda.html.twig', $array);
+	}
+
+		public function contactoAction() {
+
+
+		$firstArray = array();//UtilitiesAPI::getDefaultContent('inicio', $this);
+		$secondArray = array();
+
+		$em = $this -> getDoctrine() -> getManager();
+		$dql = "SELECT n FROM ProjectUserBundle:Page n";
+		$query = $em -> createQuery($dql);
+		//$query -> setParameter('term', '%'.$term.'%');
+		$query ->setMaxResults(1);
+
+		
+		$array = array_merge($firstArray, $secondArray);
+		return $this -> render('ProjectFrontBundle:Default:contacto.html.twig', $array);
+	}
+
 	public function pageAction($id,$friendlyname) {
 		
 		$firstArray = UtilitiesAPI::getDefaultContent('contacto', $this);

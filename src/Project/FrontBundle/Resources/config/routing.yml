@@ -4,3 +4,15 @@ project_front_homepage:
 project_front_farmacia:
     pattern:  /farmacia
     defaults: { _controller: ProjectFrontBundle:Default:farmacia }
+project_front_servicios:
+    pattern:  /servicios
+    defaults: { _controller: ProjectFrontBundle:Default:servicios }
+project_front_tarjeta:
+    pattern:  /tarjeta
+    defaults: { _controller: ProjectFrontBundle:Default:tarjeta }
+project_front_tienda:
+    pattern:  /tienda
+    defaults: { _controller: ProjectFrontBundle:Default:tienda }
+project_front_contacto:
+    pattern:  /contacto
+    defaults: { _controller: ProjectFrontBundle:Default:contacto }
